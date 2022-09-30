@@ -1,0 +1,111 @@
+@import './style.css';
+
+
+
+.login-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+#login-logo img {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    width: 60vw;
+    align-items: center;
+}
+
+#btn-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#btn-action a {
+    color: #400D3E;
+    text-decoration: none;
+}
+
+#btn-action a:hover {
+    font-style: italic;
+}
+
+input[type='text'], input[type='password'] {
+    width: 95%;
+    height: 2rem;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background: #D570D1;
+    color: #400D3E;
+    font-size: 18px;
+}
+
+form ::placeholder {
+    color: #fff;
+    font-size: 18px;
+}
+
+#btn-action button {
+    height: 2rem;
+    width: 95%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background: #C029BB;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+#btn-action button:hover {
+    background: #400D3E;
+    color: #fff;
+
+}
+
+input:focus {
+    background: #D570D1;
+    outline: none;
+}
+
+#remember-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type='checkbox'] {
+    height: 2rem;
+    border: none;
+}
+
+header {
+    background: #C029BB;
+    height: 3rem;
+    width: 100%;
+    color: #fff;
+    font-size: 32px;
+}
+
+footer {
+    background: #C029BB;
+    height: 3rem;
+    width: 100%;
+
+}
