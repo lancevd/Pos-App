@@ -99,11 +99,14 @@ let totalVar = 0;
             })
             }
         
-
+// console.log(parseInt('30 000')) 
     for (let a=0; a<addBtns.length; a++) {
         addBtns[a].addEventListener('click', function(){
             totalVar = Number(productPrices[a].textContent) + totalVar;
             totalAmount.textContent = totalVar;
+            if(productName[a].textContent){
+                console.log('Name already exists')
+            }
             cartTable.innerHTML += 
             `
             <tr>
@@ -121,6 +124,8 @@ let totalVar = 0;
             tableTotal.innerHTML = totalAmount.textContent;
             modalTotal.textContent = totalAmount.textContent;
             receiptTotal.textContent = totalAmount.textContent;
+
+            alert(`${qty[a].textContent} units of ${productName[a].textContent} added to cart`)
         })
     }
 
@@ -138,6 +143,7 @@ const qty = document.querySelectorAll('.qty');
 const printReceipt = document.getElementById('print-now');
 const payModal = document.getElementById('pay-modal')
 const receiptModal = document.getElementById('receipt')
+const closeReceiptBtn = document.getElementById('close-receipt')
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -171,6 +177,22 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+function closeReceipt(){
+    closeModal()
+    qty.forEach(function (element, index) {
+        totalAmount.textContent = 0
+        let defaultPrice = Number(productPrices[index].textContent)/Number(element.textContent);
+        // console.log(defaultPrice)
+        productPrices[index].textContent = defaultPrice
+        element.textContent = 1
+    });
+
+}
+
+closeReceiptBtn.addEventListener('click', closeReceipt)
+
+
+// closeReceiptFunc()
 
 /////////////// RECEIPT ////////////
 
